@@ -8,11 +8,11 @@ $(".ok-button").on("click", () => {
 });
 
 
-const maxNoOfTiles = 100;
+const maxNoOfTiles = 50;
 var score = 0;
 var previousLane = 0;
 var generatedBlacks = 0;
-var gameOverFlag = false;
+var gameOverFlag = true;
 var interval;
 var checkInterval;
 var animationDuration;
@@ -73,6 +73,7 @@ function checkIfGameOver() {
 }
 
 function game() {
+    gameOverFlag = false;
     if (config['age'] <  8) {
         animationDuration = 3000;
         genTileTimeout = 950;
